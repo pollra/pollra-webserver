@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>포스트 작성</title>
+    <script src="//cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+</head>
+<body>
+<form style="width: 900px;height: 400px">
+    <div style="margin:10px 10px">
+        <div>
+            <select name="category" style="width: 15%;padding-bottom: 5px; margin-right: 10px;border:1px solid #d1d1d1;">
+                <option>ㅇㅅㅇ</option>
+            </select>
+            <input type="text" style="width: 82%;padding: 3px 5px 2px 0px;border:1px solid #d1d1d1;">
+        </div>
+    </div>
+    <textarea name="posts_content" id="editor1" rows="20" cols="40">
+        This is my textarea to be replaced with CKEditor.
+    </textarea>
+    <script>
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace( 'editor1' );
+    </script>
+    <input type="submit" style="float: right; padding: 5px 15px; margin:10px;border:1px solid #d1d1d1;background-color: #f8f8f8;color:#484848">
+
+</form>
+</body>
+</html>

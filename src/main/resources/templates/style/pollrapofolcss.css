@@ -1,0 +1,33 @@
+.customsidebar{
+    overflow: hidden;
+    position: fixed;
+    top:0;
+    right: 0;
+    width: 300px;
+    float: left;
+}
+.customsidebar div:hover{
+    background-color: #6e6e6e;
+    animation-duration: 0.5s;
+}
+.customsidebar a{
+    font-size: 19px;
+    font-weight: bold;
+    color: #f1f1f1;
+    letter-spacing: 4px;
+    padding: 9px 0px 0px 20%;
+}
+.homelogo{
+    font-size: 50px;
+    margin-left: 10%;
+    color:#1e77ba;
+    font-weight: bold;
+    user-select:none;
+}
+#signupinfo li{
+    margin-bottom: 20px;
+}
+.subtextpollra{
+    color: #1e77ba;
+    margin-left: 10px;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>POLLRA-회원가입</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <style>
+        .customsidebar{
+            overflow: hidden;
+            position: fixed;
+            top:0;
+            right: 0;
+            width: 300px;
+            float: left;
+        }
+        .customsidebar div:hover{
+            background-color: #6e6e6e;
+            animation-duration: 0.5s;
+        }
+        .customsidebar a{
+            font-size: 19px;
+            font-weight: bold;
+            color: #f1f1f1;
+            letter-spacing: 4px;
+            padding: 9px 0px 0px 20%;
+        }
+        .homelogo{
+            font-size: 50px;
+            margin-left: 10%;
+            color:#1e77ba;
+            font-weight: bold;
+            user-select:none;
+        }
+        #signupinfo li{
+            margin-bottom: 20px;
+        }
+        .subtextpollra{
+            color: #1e77ba;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="ui vertical segment" id="example1" style="width: 900px; margin: 0px 0px 30px 280px">
+    <div class="left ui rail visible inverted left vertical sidebar menu" style="">
+        <div>
+            <div class="customsidebar">
+                <a>guest</a>
+                <div class="ui compact inverted menu" style="height: 15px; float: right;">
+                    <a class="item" href="/user/signup">
+                        <i class="address book outline icon"></i>
+                        <span>회원가입</span>
+                    </a>
+                    <a class="item">
+                        <i class="power off icon"></i>
+                        <span>로그인</span>
+                    </a>
+                </div>
+            </div>
+            <div style="height: 120px;"></div>
+            <div class="homelogo">POLLRA</div>
+            <div style="height: 50px;"></div>
+            <!--category-->
+            <th:block th:if="${categories} == null">
+                <i class="exclamation icon" style="color: #cfd0d2"></i>
+                <span style="color: #8a8a8a;">카테고리 목록을 불러오는데 <br/>실패했습니다..</span>
+            </th:block>
+            <th:block th:if="${categories} != null">
+                <th:block th:each="category : ${categories}">
+                    <div class="item" >
+                        <div class="header" th:text="${category.getCategoryName()}"></div>
+                        <div class="menu">
+                            <th:block th:each="subCategory : ${subCategories}">
+                                <th:block th:if="${subCategory.getCategoryLevel() > 0}">
+
+                                    <!--/*@thymesVar id="getCategoryName" type="com.pollra.web.function.category.domain.CategoryLatelyPostDAO"*/-->
+                                    <a class="item"
+                                       th:if="${category.getCategoryNum()}==${subCategory.getCategoryParent()}"
+                                       th:text="${subCategory.getCategoryName()}"
+                                       th:href="'/'+${pageInfo.prevPageNik}+'/'+${subCategory.getCategoryName()}+'/'+${subCategory.getCategoryNum()}"></a>
+                                </th:block>
+                            </th:block>
+                        </div>
+                    </div>
+                </th:block>
+            </th:block>
+        </div>
+    </div>
+
+    <div class="ui right" style="padding: 80px 0px 40px 0px;">
+        <th:block>회원가입 완료</th:block>
+    </div>
+    <!-- Posting Page Start-->
+    <div class="ui grid">
+        <!-- Post title -->
+        <div class="thirteen wide column">
+            <h1>회원가입 완료</h1>
+        </div>
+    </div>
+    <div class="ui divider"></div>
+    <div style="min-height: 300px">
+        <!-- Post Content --><br/><br/>
+        <h2 class="ui center aligned icon header">
+            <i class="circular users icon"></i>
+            <br/>
+            <br/>
+            회원가입이 정상적으로 처리되었습니다!
+            <br/><br/><br/>
+        </h2>
+        <button class="fluid ui blue button" onclick="location='../index.html'">Guest 메인페이지로!</button>
+        <br/>
+    </div>
+
+</div>
+<script>
+    $('.ui.sticky')
+        .sticky({
+            context: '#example1'
+        })
+    ;
+</script>
+</body>
+</html>

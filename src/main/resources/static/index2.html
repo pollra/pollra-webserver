@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>메인페이지</title>
+    <!-- semantic -->
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="semantic/semantic.min.js"></script>
+    <style>
+        .customsidebar{
+            overflow: hidden;
+            position: fixed;
+            top:0;
+            right: 0;
+            width: 300px;
+            float: left;
+        }
+        .customsidebar div:hover{
+            background-color: #6e6e6e;
+            animation-duration: 0.5s;
+        }
+        .customsidebar a{
+            font-size: 19px;
+            font-weight: bold;
+            color: #f1f1f1;
+            letter-spacing: 4px;
+            padding: 9px 0px 0px 20%;
+        }
+        .homelogo{
+            font-size: 50px;
+            margin-left: 10%;
+            color:#1e77ba;
+            font-weight: bold;
+            user-select:none;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="ui visible inverted left vertical sidebar menu">
+    <div class="customsidebar">
+        <a>Pollra</a>
+        <div class="ui compact inverted menu" style="height: 15px; float: right;">
+            <a class="item">
+                <i class="address book outline icon"></i>내정보
+            </a>
+            <a class="item">
+                <i class="power off icon"></i> 로그아웃
+            </a>
+        </div>
+    </div>
+    <div style="height: 120px;"></div>
+        <div class="homelogo">POLLRA</div>
+    <div style="height: 50px;"></div>
+    <a class="item">공부
+        <div class="menu"><a class="item">JAVA</a></div>
+        <div class="menu"><a class="item">SPRING</a></div>
+        <div class="menu"><a class="item">TCP/IP</a></div>
+    </a>
+    <a class="item">취미
+        <div class="menu"><a class="item">IoT</a></div>
+        <div class="menu"><a class="item">SERVER</a></div>
+        <div class="menu"><a class="item">GAME</a></div>
+    </a>
+    <a class="item">프로젝트
+        <div class="menu"><a class="item">WEB SERVER</a></div>
+        <div class="menu"><a class="item">GAME</a></div>
+    </a>
+    <a class="item">관리
+        <div class="menu"><a class="item">접속률</a></div>
+        <div class="menu"><a class="item">유저관리</a></div>
+    </a>
+
+</div>
+
+<div style="margin-left: 350px">
+    <div class="ui grid">
+        <div class="seven wide column">
+            <div class="ui segment" style="min-height: 1200px">
+                <div style="margin-top: 100px">
+                    <div class="ui grid">
+                        <!-- title -->
+                        <div class="thirteen wide column">
+                            <h1>a</h1>
+                        </div>
+                        <!-- views, good -->
+                        <div class="three wide column">
+                            <div class="two wide column">
+                                <div class="ui mini horizontal statistics" style="margin: -15px 0px -22px 0px;">
+                                    <div class="statistic" style="margin-bottom: -10px">
+                                        <div class="value">911</div>
+                                        <div class="label">Views</div>
+                                    </div>
+                                    <div class="statistic">
+                                        <div class="value">23</div>
+                                        <div class="label">Good</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui divider"></div>
+                </div>
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+                내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $('.ui.sticky')
+        .sticky({
+            context: '#example2',
+            pushing: true
+        })
+    ;
+</script>
+<!--<div class="ui relaxed divided list">
+                                    <div class="item">
+                                        <i class="large github middle aligned icon"></i>
+                                        <div class="content">
+                                            <a class="header">Semantic-Org / Semantic-UI</a>
+                                            <div class="description">10 분 전에 업데이트 됨</div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <i class="large github middle aligned icon"></i>
+                                        <div class="content">
+                                            <a class="header">Semantic-Org / Semantic-UI-Docs</a>
+                                            <div class="description">15 분 전에 업데이트 됨</div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <i class="large github middle aligned icon"></i>
+                                        <div class="content">
+                                            <a class="header">Semantic-Org / Semantic-UI-Meteor</a>
+                                            <div class="description">1 분 전에 업데이트 됨</div>
+                                        </div>
+                                    </div>
+                                </div>-->
+</body>
+</html>

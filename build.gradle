@@ -1,0 +1,43 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.0.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.pollra'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    compileOnly('org.projectlombok:lombok')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+    compileJava.dependsOn(processResources)
+
+    // 1. databases
+    runtimeOnly('org.postgresql:postgresql:42.2.2')
+    compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2')	// Mybatis
+    compile('com.zaxxer:HikariCP:3.1.0')	// Hikari connection pool
+
+    // 2. web application session with redis
+    compile('org.springframework.session:spring-session-data-redis')
+    compile('redis.clients:jedis:2.9.0')
+}

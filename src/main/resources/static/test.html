@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.css">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="semantic/semantic.js"></script>
+    <style>
+        .customsidebar{
+            overflow: hidden;
+            position: fixed;
+            top:0;
+            right: 0;
+            width: 300px;
+            float: left;
+        }
+        .customsidebar div:hover{
+            background-color: #6e6e6e;
+            animation-duration: 0.5s;
+        }
+        .customsidebar a{
+            font-size: 19px;
+            font-weight: bold;
+            color: #f1f1f1;
+            letter-spacing: 4px;
+            padding: 9px 0px 0px 20%;
+        }
+        .homelogo{
+            font-size: 50px;
+            margin-left: 10%;
+            color:#1e77ba;
+            font-weight: bold;
+            user-select:none;
+        }
+    </style>
+</head>
+<body>
+<div class="ui vertical segment" id="example1" style="width: 900px; margin: 0px 0px 30px 280px">
+    <div class="left ui rail visible inverted left vertical sidebar menu" style="">
+        <div>
+            <div class="customsidebar">
+                <a>Pollra</a>
+                <div class="ui compact inverted menu" style="height: 15px; float: right;">
+                    <a class="item">
+                        <i class="address book outline icon"></i>내정보
+                    </a>
+                    <a class="item">
+                        <i class="power off icon"></i> 로그아웃
+                    </a>
+                </div>
+            </div>
+            <div style="height: 120px;"></div>
+            <div class="homelogo">POLLRA</div>
+            <div style="height: 50px;"></div>
+<!--category-->
+            <!--<a>-->
+                <!--<i class="exclamation icon"></i>-->
+                <!--카테고리 목록을 불러오는데 실패했습니다..-->
+            <!--</a>-->
+            <a class="item">공부
+            <div class="menu"><a class="item">JAVA</a></div>
+            <div class="menu"><a class="item">SPRING</a></div>
+            <div class="menu"><a class="item">TCP/IP</a></div>
+        </a>
+            <a class="item">취미
+                <div class="menu"><a class="item">IoT</a></div>
+                <div class="menu"><a class="item">SERVER</a></div>
+                <div class="menu"><a class="item">GAME</a></div>
+            </a>
+            <a class="item">프로젝트
+                <div class="menu"><a class="item">WEB SERVER</a></div>
+                <div class="menu"><a class="item">GAME</a></div>
+            </a>
+            <a class="item">관리
+                <div class="menu"><a class="item">접속률</a></div>
+                <div class="menu"><a class="item">유저관리</a></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="right ui rail" style="">
+        <div class="ui sticky" style="left: 1572px; width: 272px !important; height: 262.531px !important;">
+            <div class="ui segment">
+                <div class="ui relaxed divided list">
+<!--news-->
+                    <div style="font-size: 20px; margin: 10px 0px -3px 0px">
+                        POSTING LIST
+                    </div>
+
+                    <!-- 포스팅이 존재하지 않을때 -->
+                    <!--<div class="item" >
+                        <i class="exclamation icon"></i>
+                        포스팅이 존재하지 않습니다
+                    </div>-->
+                <div class="item">
+                    <i class="large folder outline icon"></i>
+                    <div class="content">
+                        <a class="header">GAME / aㅏssㅣ발 섹스</a>
+                        <div class="description">10 분 전에 업데이트 됨</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large folder outline icon"></i>
+                    <div class="content">
+                        <a class="header">JAVA / 객체지향</a>
+                        <div class="description">15 분 전에 업데이트 됨</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large folder outline icon"></i>
+                    <div class="content">
+                        <a class="header">JAVA / 리펙토링</a>
+                        <div class="description">1 분 전에 업데이트 됨</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui right" style="padding: 80px 0px 40px 0px;">
+        취미 > GAME
+        <!--취미 > GAME-->
+    </div>
+    <!--<div>-->
+        <!--<a style="font-size: 20px; color: #0ea432;">-->
+            <!--<i class="exclamation icon"></i>-->
+            <!--게시글이 존재하지 않습니다.<br><br>-->
+            <!--가장 먼저 게시글을 작성해보세요!-->
+            <!--<i class="edit outline icon"></i>-->
+        <!--</a>-->
+    <!--</div>-->
+
+    <!---->
+    <!---->
+    <!-- Posting Page Start-->
+    <div class="ui grid">
+    <!-- Post title -->
+        <div class="thirteen wide column">
+            <h1>aㅏssㅣ발 섹스</h1>
+        </div>
+    <!-- Post views, good -->
+        <div class="three wide column">
+            <div class="two wide column">
+                <div class="ui mini horizontal statistics" style="margin: -30px 0px -22px 0px;">
+                    <div class="statistic" style="margin-bottom: -10px">
+                        <div class="value">911</div>
+                        <div class="label">Views</div>
+                    </div>
+                    <div class="statistic" style="margin-bottom: -10px">
+                        <div class="value">2</div>
+                        <div class="label">Good</div>
+                    </div>
+                    <div class="statistic">
+                        <div class="value">2</div>
+                        <div class="label">Comment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui divider"></div>
+    <div style="min-height: 300px">
+    <!-- Post Content -->
+        <img src="kingMat.jpg">
+    </div>
+    <div class="ui buttons" style="float: left;margin: auto">
+        <button class="circular ui icon red button"><i class="thumbs up outline icon"></i></button>
+    </div>
+    <div class="ui buttons" style="float: right;">
+        <button class="ui blue button">수정</button>
+        <button class="ui blue button">삭제</button>
+        <button class="ui blue button">정보</button>
+    </div>
+    <div class="ui divider"></div>
+    <!-- Posting Page End -->
+
+    <!-- Post Comment -->
+    <!--Comment view-->
+    <div class="ui vertical segment" style="width: 900px;">
+        <div><p>강혜지</p></div><p style="color: #6e6e6e">2018-12-04 PM 11:37</p>
+        <div>디자인 넘모 이브다</div>
+    </div>
+    <div class="ui vertical segment" style="width: 900px;">
+        <div><p>이승원</p></div><p style="color: #6e6e6e">2018-12-04 PM 11:33</p>
+        <div>섹스</div>
+    </div>
+
+    <div class="ui inverted segment" style="width: 900px;">
+        <!-- 덧글일 경우 덧글을 표시한다. -->
+        <!--<div class="ui inverted vertical segment">
+            덧글이 달릴 상대방의 덧글 표시
+        </div>-->
+        <!-- Guest 일 경우 댓글입력창 표시ㄴㄴ -->
+        <div>댓글 입력<i class="level down alternate icon"></i></div>
+        <div>
+            <form class="ui form" style="margin-bottom:35px ">
+                <textarea placeholder="댓글을 입력해주세요." rows="2" style="resize: none"></textarea>
+                <input class="ui button" style="float: right; margin: 6px;" type="submit" value="등록">
+            </form>
+        </div>
+    </div><!-- 덧글 입력창 end -->
+
+
+
+</div>
+<script>
+    $('.ui.sticky')
+        .sticky({
+            context: '#example1'
+        })
+    ;
+</script>
+</body>
+</html>
